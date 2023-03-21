@@ -1,0 +1,141 @@
+* {
+		margin: 20px;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+	}
+
+	li {
+		display: block;
+		list-style: none;
+	}
+
+	.cal-container .year-month>div:first-child>span,
+	.cal-container .year-month .pre,
+	.cal-container .year-month .next,
+	.cal-container .weeks>ul>li,
+	.cal-container .days>ul .style-default {
+		cursor: pointer;
+	}
+
+	.cal-container .year-month .pre:hover,
+	.cal-container .year-month .next:hover,
+	.cal-container .weeks>ul>li:hover {
+		text-shadow: 2px 2px 2px rgb(121, 121, 121);
+	}
+
+	.cal-container {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		width: 600px;
+		box-shadow: 7px 7px 7px rgb(112, 112, 112);
+		background-color: rgb(19, 12, 212);
+	}
+
+	.cal-container .year-month {
+		position: relative;
+		width: 100%;
+		height: 250px;
+		background-color: rgb(215, 107, 148);
+	}
+
+	.cal-container .year-month>div:first-child {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 200px;
+		height: 70px;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		letter-spacing: 3px;
+	}
+
+	.cal-container .year-month>div:first-child>span {
+		display: block;
+		margin-bottom: 5px;
+		font-weight: 700;
+		color: rgb(218, 189, 189);
+	}
+
+	.cal-container .year-month>div:first-child>span:first-child {
+		font-size: 40px;
+	}
+
+	.cal-container .year-month>div:first-child>span:last-child {
+		font-size: 25px;
+	}
+
+	.cal-container .year-month .pre,
+	.cal-container .year-month .next {
+		position: absolute;
+		top: 50%;
+		height: 40px;
+		transform: translateY(-20px);
+		margin: 0 20px;
+		font-size: 40px;
+		color: white;
+	}
+
+	.cal-container .year-month .next {
+		right: 0;
+	}
+
+	.cal-container .weeks>ul,
+	.cal-container .days>ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 0 2.5px;
+		background-color: rgb(202, 202, 202);
+	}
+
+	.cal-container .days>ul {
+		padding: 20px 0;
+		background-color: rgb(225, 225, 225);
+	}
+
+	.cal-container .weeks>ul>li {
+		width: 85px;
+		font-size: 20px;
+		font-weight: 700;
+		color: rgb(75, 75, 75);
+		text-align: center;
+		line-height: 50px;
+	}
+
+	.style-default {
+		width: 50px;
+		height: 50px;
+		margin: 0 17.5px;
+		font-size: 20px;
+		font-weight: 700;
+		color: rgb(75, 75, 75);
+		text-align: center;
+		line-height: 50px;
+	}
+
+	.days>ul .style-default:hover {
+		background-color: rgb(202, 202, 202);
+	}
+
+	.cal-container .days>ul .bg-style {
+		background-color: rgb(123, 107, 215);
+	}
+
+	.no-style {
+		width: 50px;
+		height: 50px;
+		margin: 0 17.5px;
+	}
+
+	.size-red {
+		color: rgb(3, 44, 52);
+	}

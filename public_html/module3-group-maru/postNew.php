@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +7,9 @@
 <?php
 // Content of database.php
 
-$mysqli = new mysqli('localhost', 'wustl_inst', 'wustl_pass', 'module3group');
+require 'database.php';
 
-if($mysqli->connect_errno) {
-	printf("Connection Failed: %s\n", $mysqli->connect_error);
-	exit;
-}
+
 ?>
 
 <body>
@@ -21,40 +17,61 @@ if($mysqli->connect_errno) {
         <tbody>
             <tr>
                 <td>
-                    <a href="filesTrial.php">
+                    <a href="files.php">
                        
                 </td>
-                <td>
-                    <span>
-                        <a href="filesTrial.php">Main Page</a>
-                        |
-                        
-                                |
-                                <a href="logout.php">Logout</a>                   </span>
-                </td>
+              
             </tr>
         </tbody>
     </table>
     <html>
-        <head>
+        <head>  
             <title>Upload Your Story</title>
         </head>
         <body>
             <h1>Upload Your Story</h1>
-            <form action="post2.php" method="post">
+            
+            <form action="postNew2.php" method="post">
+
+                Username:  <input type="text" name="username"/><br>
+                Password:  <input type="password" name="password"/><br> <br>
                 <label for="title">Title:</label>
                 <input type="text" name="title" id="title" required><br><br>
                 <label for="title">URL:</label>
-                <input type="text" name="url" id="url" required><br><br>
+                <input type="text" name="url" id="url" ><br><br>
                 <label for="story">story:</label>
                 <textarea name="story" id="story" rows="10" cols="50" required></textarea><br><br>
                 <input type="submit" name="submit" value="Submit">
+                <br><br><br><br><br><br>
+                
+
+
             </form>
+
+
+
+
+            <form action="post.php" method="post">
+              
+                <input type="submit" name="goback" value="back" /><br><br><br>
+
+
+            </form>
+
+
+
+<?php
+         
+if(isset($_POST["goback"])){
+header("Location: viewDetail.php");
+}
+?>
         </body>
 
         
     </html>
 
+ 
 
 </body>
 </html>

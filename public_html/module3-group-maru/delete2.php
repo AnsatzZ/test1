@@ -21,6 +21,6 @@ $stmt->execute();
 
 $stmt->close();
 
-header("Location: filesTrial.php")
+header("Location: filesTrial2.php")
 
 ?>

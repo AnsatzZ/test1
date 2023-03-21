@@ -11,7 +11,7 @@ if(isset($_POST["user"])){
             $email=$_POST["email"];
             $rc=$_POST["rc"];
 
-            $stmt = $mysqli->prepare("SELECT username,email,rc FROM users WHERE username=?");
+            $stmt = $mysqli->prepare("SELECT username,email,rc FROM users2 WHERE username=?");
             if(!$stmt){
                 printf("1Query Prep Failed: %s\n", $mysqli->error);
                 exit;
@@ -22,14 +22,14 @@ if(isset($_POST["user"])){
             $stmt ->fetch();
             $stmt ->close();
             if($users_check==$user && $email_check==$email && $rc_check==$rc){
-                $stmt2 = $mysqli->prepare("DELETE From users WHERE username=?");
+                $stmt2 = $mysqli->prepare("DELETE From users2 WHERE username=?");
                 if(!$stmt2){
                     printf("Query Prep Failed: %s\n", $mysqli->error);
                     exit;
                 }
                 $stmt2->bind_param('s', $user);
                 echo "Deleted!";
-                header("refresh:1; url=login.php");
+                header("refresh:1; url=loginAdmin.php");
                 $stmt2->execute();
                 
                 $stmt2->close();
@@ -41,10 +41,3 @@ if(isset($_POST["user"])){
         } 
      }
 }
-
-
-
-
-?>
-
-

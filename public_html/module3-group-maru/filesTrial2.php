@@ -24,7 +24,7 @@ require 'database.php';
                 
 
                
-                <a href="post.php">Post Story Anonymously</a>
+                <a href="postAdmin.php">Post Story</a>
 <hr>
 </hr>
 <a href="viewDetail.php">View all story details</a>
@@ -32,28 +32,15 @@ require 'database.php';
 <hr>
 </hr>
 
-<!-- <a href="edit.php">Edit Story</a>
-<hr>
-</hr> -->
-
-<!-- <a href="delete.php">Delete Story</a>
-<hr>
-</hr> -->
-
-
-<a href="postNew.php">Post Story with ID</a>
+<a href="edit.php">Edit Story</a>
 <hr>
 </hr>
 
-<a href="deleteStoryNew.php">Delete Your Story</a>
+<a href="delete.php">Delete Story</a>
 <hr>
 </hr>
 
 
-
-<a href="changeStory.php">change Story</a>
-<hr>
-</hr>
             
                 </form><br><br>
         <?php

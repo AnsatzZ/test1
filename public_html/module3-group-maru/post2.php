@@ -1,7 +1,7 @@
 <?php
 require 'database.php';
 
-$user = "user";
+$user = "User";
 
 // $uid =39;
 $title = $_POST['title'];

@@ -1,14 +1,13 @@
 <html>
 
 
-<form action="comment.php" method="POST">
+<form action="deleteComment.php" method="POST">
                 Username:  <input type="text" name="username"/><br>
                 Password:  <input type="password" name="password"/><br> 
-                Story_ID You Want to Comment:<input type="text" name="story_id"/><br> 
-                <textarea rows="10" name="comment" placeholder="enter your comment here" ></textarea>
-                <br>
-                <button type="submit">Post</button>
-                <br><br><br><br><br>
+                Enter the Comment_ID of your comment:<input type="int" name="comment_id"/><br> 
+                
+                <input type="submit" name="delete" value="delete"/><br><br><br>
+                <br><br><br>
                 <input type="submit" name="goback" value="back" /><br><br><br>
             </form>
     
@@ -22,15 +21,15 @@ if(isset($_POST["goback"])){
     }
 
 
-if(isset($_POST["username"])){ 
+if(isset($_POST["delete"])){ 
     if(isset($_POST["password"])){
-        if(isset($_POST["story_id"])){
-            if(isset($_POST["comment"])){
+        if(isset($_POST["comment_id"])){
+            if(isset($_POST["username"])){
+            
                 session_start();
                 $user=$_POST["username"];
                 $password=$_POST["password"];
-                $story_id=$_POST["story_id"];
-                $comment=$_POST["comment"];
+                $comment_id=$_POST["comment_id"];
                 
                 $stmt = $mysqli->prepare("SELECT COUNT(username), hashed_password FROM users WHERE username=?");
                 
@@ -49,33 +48,32 @@ if(isset($_POST["username"])){
                 // Redirect to your target page
                 $stmt ->close();
 
-                
 
 
 
-                $stmt2 = $mysqli->prepare("insert into comments (story_id, comment, user_name) values (?, ?, ?)");
+                $stmt2 = $mysqli->prepare("DELETE From comments WHERE comment_id=? AND user_name=?");
                 if(!$stmt2){
                     printf("Query Prep Failed: %s\n", $mysqli->error);
                     exit;
                 }
-                $stmt2->bind_param('sss', $story_id, $comment, $user);
+                $stmt2->bind_param('ss', $comment_id, $user);
+                echo "It will be deleted if it is your work!";
                 $stmt2->execute();
+                
                 $stmt2->close();
-                echo "Successful!!!";
 
-                } else{
-                // Login failed; redirect back to the login screen
-                echo "Check your password";
-                exit();
-                }
 
-            }
+                }else{
+                    echo "Check your inputs!";
+                    exit();
+                } 
+            }  
         }
-        
     }
 }else{
     echo "please fill all the blanks";
 }
+
 
 
 

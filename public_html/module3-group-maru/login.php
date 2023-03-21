@@ -13,11 +13,6 @@
 </form>
 
 
-<form action="unregister.php" method="post">
-    
-    <input type= "submit" name="login" value= "View the site without login"/>
-    
-  </form>
 
 
 <form name ='input' action="signupTemp.php" method="get">
@@ -39,6 +34,12 @@
 </form>
 
 
+<form action="forget.php" method="post">
+    
+    <input type= "submit" name="login" value= "forget password?"/>
+    
+  </form>
+
 
 <form action="unregister.php" method="post">
     
@@ -47,6 +48,11 @@
   </form>
 
 
+  <form action="loginAdmin.php" method="post">
+    
+    <input type= "submit" name="login" value= "Admin user login"/>
+    
+  </form>
 
 
 

@@ -21,12 +21,12 @@ if($mysqli->connect_errno) {
         <tbody>
             <tr>
                 <td>
-                    <a href="filesTrial.php">
+                    <a href="files.php">
                        
                 </td>
                 <td>
                     <span>
-                        <a href="filesTrial.php">Main Page</a>
+                        <a href="files.php">Main Page</a>
                         |
                         
                                 |

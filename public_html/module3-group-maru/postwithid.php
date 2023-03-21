@@ -1,15 +1,23 @@
 <html>
 
-
-<form action="comment.php" method="POST">
+<h1>Upload Your Story</h1>
+<form action="postwithid.php" method="POST">
                 Username:  <input type="text" name="username"/><br>
                 Password:  <input type="password" name="password"/><br> 
-                Story_ID You Want to Comment:<input type="text" name="story_id"/><br> 
-                <textarea rows="10" name="comment" placeholder="enter your comment here" ></textarea>
+                <!-- Story_ID You Want to Comment:<input type="text" name="story_id"/><br>  -->
+                <!-- <textarea rows="10" name="comment" placeholder="enter your comment here" ></textarea>
                 <br>
                 <button type="submit">Post</button>
                 <br><br><br><br><br>
-                <input type="submit" name="goback" value="back" /><br><br><br>
+                <input type="submit" name="goback" value="back" /><br><br><br> -->
+            
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" required><br><br>
+                <label for="title">URL:</label>
+                <input type="text" name="url" id="url" required><br><br>
+                <label for="story">story:</label>
+                <textarea name="story" id="story" rows="10" cols="50" required></textarea><br><br>
+                <input type="submit" name="goback" value="back">
             </form>
     
 
@@ -29,8 +37,11 @@ if(isset($_POST["username"])){
                 session_start();
                 $user=$_POST["username"];
                 $password=$_POST["password"];
-                $story_id=$_POST["story_id"];
-                $comment=$_POST["comment"];
+                $title=$_POST["title"];
+                $url=$_POST["url"];
+                $story=$_POST["story"];
+
+              
                 
                 $stmt = $mysqli->prepare("SELECT COUNT(username), hashed_password FROM users WHERE username=?");
                 
@@ -49,11 +60,16 @@ if(isset($_POST["username"])){
                 // Redirect to your target page
                 $stmt ->close();
 
-                
+                $user=$_POST["username"];
+                $password=$_POST["password"];
+                $title=$_POST["title"];
+                $url=$_POST["url"];
+                $story=$_POST["story"];
 
 
 
-                $stmt2 = $mysqli->prepare("insert into comments (story_id, comment, user_name) values (?, ?, ?)");
+
+                $stmt2 = $mysqli->prepare("insert into story (title, url, story) values (?, ?, ?)");
                 if(!$stmt2){
                     printf("Query Prep Failed: %s\n", $mysqli->error);
                     exit;

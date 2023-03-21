@@ -8,8 +8,6 @@
 
 
 
-
-
 <?php
 require 'database.php';
 
@@ -63,39 +61,12 @@ echo "</ul>\n";
 
 $stmt->close();
 ?>
-
-
-<a href="comment.php">comment</a>
-<hr>
-</hr>
-
-<a href="deleteComment.php">Delete comment</a>
-<hr>
-</hr>
-
-<a href="filesTrial.php">Back to mainpage</a>
-<hr>
-</hr>
-
-
-<a href="login.php">Back to login</a>
-<hr>
-</hr>
-
-<a href="changeStory.php">change story</a>
-<hr>
-</hr>
-
-
-
-
-
-<!-- <form action="viewDetail.php" method="POST">
+<form action="viewDetail.php" method="POST">
     <br><br><br>
     <input type="submit" name="comment" value='comment' /><br><br><br>
     <input type="submit" name="delete_comment" value='Delete your comment' /><br><br><br>
     <input type="submit" name="backtologin" value="back to login" /><br><br><br>
-</form> -->
+</form>
 
 <?php
 if(isset($_POST['comment'])){

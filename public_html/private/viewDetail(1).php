@@ -63,43 +63,34 @@ echo "</ul>\n";
 
 $stmt->close();
 ?>
-
-
-<a href="comment.php">comment</a>
-<hr>
-</hr>
-
-<a href="deleteComment.php">Delete comment</a>
-<hr>
-</hr>
-
-<a href="filesTrial.php">Back to mainpage</a>
-<hr>
-</hr>
-
-
-<a href="login.php">Back to login</a>
-<hr>
-</hr>
-
-<a href="changeStory.php">change story</a>
-<hr>
-</hr>
-
-
-
-
-
-<!-- <form action="viewDetail.php" method="POST">
+<form action="viewDetail.php" method="POST">
     <br><br><br>
-    <input type="submit" name="comment" value='comment' /><br><br><br>
+    <input type="submit" name="comment" value='comment' /><br>
     <input type="submit" name="delete_comment" value='Delete your comment' /><br><br><br>
+    <input type="submit" name="post_story" value='Post New Story' /><br>
+    <input type="submit" name="change_story" value='Modify Your Story Here' /><br>
+    <input type="submit" name="delete_story" value='Delete Your Story Here' /><br>
+
+
+    <br>
     <input type="submit" name="backtologin" value="back to login" /><br><br><br>
-</form> -->
+</form>
 
 <?php
 if(isset($_POST['comment'])){
     header("Location: comment.php");
+}
+
+if(isset($_POST['delete_story'])){
+    header("Location: deleteStory.php");
+}
+
+if(isset($_POST['post_story'])){
+    header("Location: post.php");
+}
+
+if(isset($_POST['change_story'])){
+    header("Location: changeStory.php");
 }
 
 if(isset($_POST['delete_comment'])){

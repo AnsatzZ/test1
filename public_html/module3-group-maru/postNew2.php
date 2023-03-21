@@ -1,18 +1,3 @@
-<html>
-
-
-<form action="comment.php" method="POST">
-                Username:  <input type="text" name="username"/><br>
-                Password:  <input type="password" name="password"/><br> 
-                Story_ID You Want to Comment:<input type="text" name="story_id"/><br> 
-                <textarea rows="10" name="comment" placeholder="enter your comment here" ></textarea>
-                <br>
-                <button type="submit">Post</button>
-                <br><br><br><br><br>
-                <input type="submit" name="goback" value="back" /><br><br><br>
-            </form>
-    
-
 <?php    
 
 require 'database.php';
@@ -22,16 +7,17 @@ if(isset($_POST["goback"])){
     }
 
 
-if(isset($_POST["username"])){ 
+if(isset($_POST["submit"])){ 
     if(isset($_POST["password"])){
-        if(isset($_POST["story_id"])){
-            if(isset($_POST["comment"])){
+        if(isset($_POST["story"])){
+            if(isset($_POST["username"])&&isset($_POST["title"])){
                 session_start();
                 $user=$_POST["username"];
                 $password=$_POST["password"];
-                $story_id=$_POST["story_id"];
-                $comment=$_POST["comment"];
-                
+                $story=$_POST["story"];
+                $tile=$_POST["title"];
+                $url=$_POST["url"];
+
                 $stmt = $mysqli->prepare("SELECT COUNT(username), hashed_password FROM users WHERE username=?");
                 
                 // Bind the parameter
@@ -53,15 +39,16 @@ if(isset($_POST["username"])){
 
 
 
-                $stmt2 = $mysqli->prepare("insert into comments (story_id, comment, user_name) values (?, ?, ?)");
+                $stmt2 = $mysqli->prepare("INSERT into story (user,title, url,story) values (?, ?, ?,?)");
                 if(!$stmt2){
                     printf("Query Prep Failed: %s\n", $mysqli->error);
                     exit;
                 }
-                $stmt2->bind_param('sss', $story_id, $comment, $user);
+                $stmt2->bind_param('ssss', $user, $tile, $url,$story);
                 $stmt2->execute();
                 $stmt2->close();
                 echo "Successful!!!";
+                header("refresh:1; url=filesTrial.php");
 
                 } else{
                 // Login failed; redirect back to the login screen
@@ -74,11 +61,10 @@ if(isset($_POST["username"])){
         
     }
 }else{
-    echo "please fill all the blanks";
+    echo "please fill all the blanks, if no URL enter NO please";
 }
 
 
 
 
 ?>        
-</html>
