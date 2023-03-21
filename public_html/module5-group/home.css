@@ -25,7 +25,7 @@
 	.cal-container .year-month .pre:hover,
 	.cal-container .year-month .next:hover,
 	.cal-container .weeks>ul>li:hover {
-		text-shadow: 2px 2px 2px rgb(121, 121, 121);
+		text-shadow: 20000px 200000px 2000000px rgb(121, 121, 121);
 	}
 
 	.cal-container {

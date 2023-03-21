@@ -3,40 +3,82 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Calendar</title>
-		<link rel="stylesheet" href="home.css">
+		<link rel="stylesheet" href="home2.css">
+		<style>
+			table, div, td {
+			  border: 1px solid black;
+			  border-collapse: collapse;
+			  margin-left: 10px; 
+			  margin-right: 10px;
+			}
+
+		</style>
 	</head>
-	<body>
-        <div class="login">
-            
-        </div>
+	<body>		<div id = 'login'>
+		<input type = 'text' id = "username" placeholder = 'Username'/>
+		<input type = 'password' id = "password" placeholder = 'Password'/>
+		<button id = 'login_button'>Log In</button>
+		<div id = 'login_error'></div>
+	  </div>
+	  <div id = 'logout' style = "display:none">
+		<button id = 'logout_button'>Log Out</button>
+	  </div>
+	  <button id = 'signup_button'>Sign Up</button>
+	  <div id = 'signup' style = "display:none">
+		<input type = 'text' id = 'first_name' placeholder = 'First Name'/>
+		<input type = 'text' id = 'last_name' placeholder = 'Last Name'/>
+		<input type = 'text' id = 'new_username' placeholder = 'Username'/>
+		<input type = 'password' id = 'new_password' placeholder = 'Password'/>
+		<input type = 'password' id = 'confirm_password' placeholder = 'Confirm Password'/>
+		<button id = 'register_user'>Register</button><br>
+		<div id = 'su_error'> </div>
+		<button id = 'return_to_login'> Return to Login</button>
+	  </div>
+
+       
 		<div class="cal-container">
+
 			<div class="year-month">
 				<div>
 					<span id="month"></span>
 					<span id="year"></span>
 				</div>
-				<div class="pre" id="pre-month">&lt;</div>
-				<div class="next" id="next-month">&gt;</div>
+				<button id="pre-month">Previous Month </button>
+				<button id="next-month">Next Month</button>
+				
+				<!-- <div class="pre" id="pre-month">&lt;</div>
+				<div class="next" id="next-month">&gt;</div> -->
 			</div>
 			<div class="weeks">
 				<ul>
-					<li>Mon</li>
-					<li>Tue</li>
-					<li>Wed</li>
-					<li>Thu</li>
-					<li>Fri</li>
-					<li>Sat</li>
-					<li>Sun</li>
+					<li>Su</li>
+					<li>Mo</li>
+					<li>Tu</li>
+					<li>We</li>
+					<li>Th</li>
+					<li>Fr</li>
+					<li>Sa</li>
+					
 				</ul>
+
 			</div>
 			<div class="days">
 				<ul id="day"></ul>
 			</div>
-			<div>
+			<br>
+			<!-- <div>
 				<input type="date" id="date">
 				<button id='taskAdd'>ADD TASK</button>
-			</div>
+			</div> -->
 		</div>
-		<script type="text/javascript" src="home.js"></script>
+		<div>
+			<br>
+		</table>
+		<input type="date" id="date">
+		<button id='taskAdd'>ADD TASK</button>
+		</form>
+	</div>
+		
+		<script type="text/javascript" src="home3.js"></script>
 	</body>
 </html>

@@ -3,58 +3,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Weather Widget</title>
-    <link rel="stylesheet" type="text/css" href="http://classes.engineering.wustl.edu/cse330/content/weather.css"/>
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="weather.css"/>
+    <style>
+    button {
+      background-color: rgb(11, 102, 171);
+      border-width: 2.5px;
+      font-family: "Helvetica";
+      font-size: 25px;
+    }
+  </style>
   </head>
   <body>
+    Weather report
+    <br>  
     <div class="weather" id="weatherWidget">
-      <div class="weather-loc">
-      </div>
-      <div class="weather-humidity">
-      </div>
-      <div class="weather-temp">
-      </div>
+      <div class="weather-loc"></div>
+      <div class="weather-humidity"></div>
+      <div class="weather-temp"></div>
       <img class="weather-tomorrow" />
       <img class="weather-dayaftertomorrow" />
     </div>
+ 
     <br>
-    <button id="refresh">Update weathers</button>
+    <button id="update">Update weathers</button>
     <script>
-    
-    function fetchWeather(event){
-      //use fetch api call to send xml object to the server
-      fetch(' https://classes.engineering.wustl.edu/cse330/content/weather_json.php')
-      // get the response then convert it to the json format using .json()
-      .then(res => res.json())
-      //parse json using stringify
-      .then(function(data){
-        let weatherInfo = JSON.stringify(data);
-        let city = (data.location.city);
-        let state =(data.location.state);
-        let humidity =(data.atmosphere.humidity);
-        let temp =(data.current.temp);
-        let tomorrowCode = (data.tomorrow.code);
-        let dayAfterCode =(data.dayafter.code);
-        
-        document.getElementsByClassName("weather-loc")[0].innerHTML = "<strong>" + data.location.city + "</strong> " + data.location.state;
-        document.getElementsByClassName("weather-temp")[0].textContent = data.current.temp;
-        document.getElementsByClassName("weather-humidity")[0].textContent = data.atmosphere.humidity;
-        // document.getElementsByClassName("weather-tomorrow")[0].src = "http://us.yimg.com/i/us/nws/weather/gr/" + tomorrowCode + "ds.png";
-        // document.getElementsByClassName("weather-dayaftertomorrow")[0].src = "http://us.yimg.com/i/us/nws/weather/gr/" + dayAfterCode + "ds.png";
-        
+    xmlHttp.open("GET", "http://classes.engineering.wustl.edu/cse330/content/weather_json.php", true);
+ 
+  </script>
+    <script>
 
-        var after1URL = "http://us.yimg.com/i/us/nws/weather/gr/"+data.tomorrow.code+"ds.png";
-        var after2URL = "http://us.yimg.com/i/us/nws/weather/gr/"+data.dayafter.code+"ds.png";
-        document.getElementsByClassName("weather-tomorrow")[0].src=after1URL;
-        document.getElementsByClassName("weather-dayaftertomorrow")[0].src=after2URL;
+    function fetchWeather(event){
+ 
+      fetch(' https://classes.engineering.wustl.edu/cse330/content/weather_json.php')
+      .then(res => res.json())
+      .then(function(data){
+        var v1="<strong>" + data.location.city + "</strong> " + data.location.state;
+        document.getElementsByClassName("weather-loc")[0].innerHTML=v1;
+        document.getElementsByClassName("weather-temp")[0].textContent=data.current.temp;
+        document.getElementsByClassName("weather-humidity")[0].textContent=data.atmosphere.humidity;
+        var after1 = "http://us.yimg.com/i/us/nws/weather/gr/"+data.tomorrow.code+"ds.png";
+        document.getElementsByClassName("weather-tomorrow")[0].src=after1;
+        var after2 = "http://us.yimg.com/i/us/nws/weather/gr/"+data.dayafter.code+"ds.png";
+        document.getElementsByClassName("weather-dayaftertomorrow")[0].src=after2;
         
       })
-      .catch(error => console.error('Error: ',error))
-
     }
     
     document.addEventListener("DOMContentLoaded",fetchWeather,false);
-    document.getElementById("refresh").addEventListener("click",fetchWeather,false);
+    document.getElementById("update").addEventListener("click",fetchWeather,false);
     </script>
 
 
