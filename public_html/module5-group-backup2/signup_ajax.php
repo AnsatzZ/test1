@@ -9,22 +9,8 @@ $json_str = file_get_contents('php://input');
 $json_obj = json_decode($json_str, true);
 
 //Variables can be accessed as such:
-// $username = $json_obj['username'];
-// $password = $json_obj['password'];
-
-$username = htmlentities($json_obj['username']);
-
-$password =htmlentities($json_obj['password']);
-
-if (preg_match('/^[a-zA-Z\d]+$/', $username)) {
-	$data = array('username' => $username);
-	$json = json_encode($data);
-  //   echo $json;
-  } else {
-	$word1 ='Invalid username';
-	$json =$word1;
-  }
-  
+$username = $json_obj['username'];
+$password = $json_obj['password'];
 //This is equivalent to what you previously did with $_POST['username'] and $_POST['password']
 
 // Check to see if the username and password are valid.  (You learned how to do this in Module 3.)
@@ -32,16 +18,14 @@ if (preg_match('/^[a-zA-Z\d]+$/', $username)) {
 
 
 $stmt = $mysqli->prepare("SELECT count(username) FROM users WHERE username=?");
-$user = htmlentities($username);
+$user = $username;
 
 $stmt->bind_param('s', $user);
 $stmt->execute();
 $stmt->bind_result($cnt);
 $stmt->fetch();
 
-
-$temp_pass=password_hash($password,PASSWORD_BCRYPT);
-$pwd_hash = htmlentities($temp_pass);
+$pwd_hash = password_hash($password,PASSWORD_BCRYPT);
 $stmt ->close();
 
 

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="weather.css"/>
+
+  </head>
+    <body>
+    <br>  
+    <div class="weather" id="weatherWidget">
+      <div class="weather-loc"></div>
+      <div class="weather-humidity"></div>
+      <div class="weather-temp"></div>
+      <img class="weather-tomorrow" />
+      <img class="weather-dayaftertomorrow" />
+    </div>
+    <br>
+    <button id="update">Update weathers</button>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fetchWeather = async () => {
+          try {
+            const res = await fetch(
+              "https://classes.engineering.wustl.edu/cse330/content/weather_json.php"
+            );
+            const data = await res.json();
+            const b1 =
+              "<strong>" +data.location.city +"</strong> " +data.location.state;
+            document.querySelector(".weather-loc").innerHTML = b1;
+            document.querySelector(".weather-temp").textContent = data.current.temp;
+            document.querySelector(".weather-humidity").textContent = data.atmosphere.humidity;
+            document.querySelector(".weather-tomorrow").src = "http://us.yimg.com/i/us/nws/weather/gr/" +data.tomorrow.code +"ds.png";
+            document.querySelector(".weather-dayaftertomorrow").src = "http://us.yimg.com/i/us/nws/weather/gr/" + data.dayafter.code + "ds.png";
+          } 
+          catch (error) {
+            console.log(error);
+          }
+        };
+        fetchWeather();
+        document.getElementById("update").addEventListener("click", fetchWeather);
+
+      });
+    </script>
+  </body>
+  </html>
+
