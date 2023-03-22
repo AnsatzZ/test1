@@ -4,36 +4,22 @@ function loginAjax(event) {
     event.preventDefault();
     const username = document.getElementById("username").value; // Get the username from the form
     const password = document.getElementById("password").value; // Get the password from the form
-
+    colorChange(username)
     // Make a URL-encoded string for passing POST data:
-    const data = { 'username': username, 'password': password };
-         fetch("login_ajax.php", {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: { 'content-type': 'application/json' }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    sessionStorage.setItem('token', data.token);
-                    alert("You've been logged in!");
-                } else {
-                    alert(`You were not logged in ${data.message}`);
-                }
-            })
-            .catch(err => alert(err));
-        }
 
-//     fetch("login_ajax.php", {
-//             method: 'POST',
-//             body: JSON.stringify(data),
-//             headers: { 'content-type': 'application/json' }
-//         })
-//         .then(response => response.json())
-      
-//         .then(data => alert(data.success ? "You've been logged in!" : `You were not logged in ${data.message}`))
-//         .catch(err => alert(err));
-// }
+    
+    const data = { 'username': username, 'password': password };
+
+
+    fetch("login_ajax.php", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'content-type': 'application/json' }
+        })
+        .then(response => response.json())
+        .then(data => {console.log(data)})
+        .catch(err => alert(err));
+}
 
 
 function signupAjax(event) {
@@ -49,7 +35,7 @@ function signupAjax(event) {
             headers: { 'content-type': 'application/json' }
         })
         .then(response => response.json())
-        .then(data => alert(data.success ? "You've been signed up!" : `Check: ${data.message}`))
+        .then(data => alert(data.success ? "You've been signed up!" : `Check ${data.message}`))
         .catch(err => alert(err));
        
 }

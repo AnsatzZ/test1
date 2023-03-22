@@ -10,25 +10,26 @@ var dialogOverlay = document.getElementById('dialog-overlay');
 var dialogBox = document.getElementById('dialog-box');
 var dialogClose = document.getElementById('dialog-close');
 var username = document.getElementById("username").value; 
+var dialogFooterList=document.getElementById('dialogFooterList');
 
-// if ("logged_in"==true){
-// 	// function colorChange(username){
-// 		var data={
-// 			"user":username
-// 		}
+if ("logged_in"==true){
+	// function colorChange(username){
+		var data={
+			"user":username
+		}
 	
-// 		fetch("lesseeRed.php", {
-// 			method: 'POST',
-// 			body: JSON.stringify(data),
-// 			headers: { 'content-type': 'application/json' }
-// 		})
-// 		.then(response =>response.json())
-// 		.then(data => {
-// 			list=data
-// 			displayCalendar(year,month)
-// 		})
-// 		// .catch(err => alert(err));
-// 	}
+		fetch("lesseeRed.php", {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: { 'content-type': 'application/json' }
+		})
+		.then(response =>response.json())
+		.then(data => {
+			list=data
+			displayCalendar(year,month)
+		})
+		// .catch(err => alert(err));
+	}
 
 
 function showDialog(time) {
@@ -44,7 +45,15 @@ function showDialog(time) {
 				headers: { 'content-type': 'application/json' }
 			})
 			.then(response =>response.json())
-			.then(data => alert(data.success ? "Add Successfully!" : `Check your inputs! ${data.message}`))
+			.then(data => {
+				var dialogFooterList=document.getElementById('dialogFooterList');
+				for(var j=0;j<data.length;j++){
+					let p = document.createElement('p');
+					console.log(p + "<");
+					p.innerHTML="日期："+data[j].date+'&nbsp时间：'+data[j].time+'&nbsp标题'+data[j].activity+'&nbsp描述：'+data[j].description
+					dialogFooterList.appendChild(p);
+				}
+			})
 			.catch(err => alert(err));
 	}
 	var data={
@@ -68,8 +77,26 @@ hideDialog()
 
 dialogClose.addEventListener('click', hideDialog);
 dialogOverlay.addEventListener('click', hideDialog);
+var list = ['2023-3-3', '2023-3-20', '2023-3-18']
+function colorChange(username){
+	var data={
+		"user":username
+	}
 
-let list = ['2023-3-3', '2023-3-20', '2023-3-18']
+	fetch("lesseeRed.php", {
+		method: 'POST',
+		body: JSON.stringify(data),
+		headers: { 'content-type': 'application/json' }
+	})
+	.then(response =>response.json())
+	.then(data => {
+		list=data
+		displayCalendar(year,month)
+	})
+	.catch(err => alert(err));
+}
+
+
 
 function displayCalendar(year, month) {
 	var firstDayOfMonth = new Date(year, month, 1);
@@ -161,7 +188,7 @@ function displayCalendar(year, month) {
 	currentMonth.innerHTML = year + '-' + (month + 1) + '';
 }
 
-displayCalendar(year, month);
+// displayCalendar(year, month);
 
 document.getElementById('prevMonth').addEventListener('click', function() {
 	if (month === 0) {
@@ -189,60 +216,29 @@ document.getElementById('add-event').addEventListener('click', function() {
 	let title = document.querySelector('#Title').value;
 	let descriptions = document.querySelector('#Descriptions').value;
 	let time = document.querySelector('#Time').value;
+	let username = document.getElementById("username").value; 
 	// let time = document.querySelector('#Time').value;
 	// eventid
 	if (title == '' || descriptions == ''||time == "") {
 		alert('Please fill in all fields');
 	} else {
 		//zhandao
-		let username1 = sessionStorage.getItem("username");
-
-
-
-
 		let username = document.getElementById("username").value; 
  //添加日常的参数
- 		// let  data = { 'time': time, 'title': title, 'descriptions': descriptions,"date":selectedYear + '-' + selectedMonth + '-' + selectedDay};
-		// console.log(data)
-		// function addeventsAjax(data) {
-		// 	console.log(data)
-		// 	// Make a URL-encoded string for passing POST data:
-		// 	fetch("add_ajax.php", {
-		// 			method: 'POST',
-		// 			body: JSON.stringify(data),
-		// 			headers: { 'content-type': 'application/json' }
-		// 		})
-		// 		.then(response => response.json())
-		// 		// let data = sessionStorage.getItem("key");
-		// 		.then(data => alert(data.success ? "Add Successfully!" : `Check your inputs! ${data.message}`))
-		// 		.catch(err => alert(err));
-		// }
-
-		let data = { 'time': time, 'title': title, 'descriptions': descriptions, "date": selectedYear + '-' + selectedMonth + '-' + selectedDay };
-		console.log(data);
-		
+ 		let  data = { 'user' : username,'time': time, 'title': title, 'descriptions': descriptions,"date":selectedYear + '-' + selectedMonth + '-' + selectedDay};
+		console.log(data)
 		function addeventsAjax(data) {
-		  console.log(data);
-		
-		  // Make a URL-encoded string for passing POST data:
-		  fetch("add_ajax.php", {
-			  method: 'POST',
-			  body: JSON.stringify(data),
-			  headers: { 'content-type': 'application/json' }
-			})
-			.then(response => {
-			  sessionStorage.setItem('token', response.token); // set the token in sessionStorage
-			  return response.json();
-			})
-			.then(data => alert(data.success ? "Add Successfully!" : `Check your inputs! ${data.message}`))
-			.catch(err => alert(err));
+			console.log(data)
+			// Make a URL-encoded string for passing POST data:
+			fetch("add_ajax.php", {
+					method: 'POST',
+					body: JSON.stringify(data),
+					headers: { 'content-type': 'application/json' }
+				})
+				.then(response => response.json())
+				.then(data => alert(data.success ? "Add Successfully!" : `Check your inputs! ${data.message}`))
+				.catch(err => alert(err));
 		}
-
-
-
-
-
-
 
 
 		// alert(selectedYear + '-' + selectedMonth + '-' + selectedDay + '-' + title + '-' + descriptions)

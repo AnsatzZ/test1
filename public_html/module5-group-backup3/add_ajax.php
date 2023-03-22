@@ -8,32 +8,24 @@ $json_str = file_get_contents('php://input');
 //This will store the data into an associative array
 $json_obj = json_decode($json_str, true);
 
-$descriptions =  htmlentities($json_obj['descriptions']);
-$title = htmlentities($json_obj['title']);
-$date = htmlentities($json_obj['date']);
-$user = htmlentities($json_obj['user']);
-$time = htmlentities($json_obj['time']);
+
+$descriptions =  $json_obj['descriptions'];
+$title = $json_obj['title'];
+$date = $json_obj['date'];
+$user = $json_obj['user'];
+$time = $json_obj['time'];
 
 
 	$stmt = $mysqli->prepare("INSERT INTO events (activity, description,date,time,user) values (?,?,?,?,?)");
-	$stmt->bind_param('ssss', $descriptions,$title,$date,$time,$user);
-    $activity = htmlentities($title);
-    $description = htmlentities($descriptions);
-    $date = htmlentities($date);
-    $time = htmlentities($time);
-    $user = htmlentities($user);
-
-
+	$stmt->bind_param('sssss', $descriptions,$title,$date,$time,$user);
     $stmt ->execute();
     $stmt ->close();
-    
 	if(!$stmt){
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
     }else{
         echo json_encode(array(
             "success" => true
-            
         ));
     }
 	
