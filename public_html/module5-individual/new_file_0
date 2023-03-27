@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script>
+		window.onload = function() {
+			var num1 = document.getElementById("num1");
+			var num2 = document.getElementById("num2");
+			var result = document.getElementById("result");
+			var add = document.getElementById("add");
+			var subtract = document.getElementById("subtract");
+			var multiply = document.getElementById("multiply");
+			var divide = document.getElementById("divide");
+
+			num1.addEventListener("keyup", calculate);
+			num2.addEventListener("keyup", calculate);
+			add.addEventListener("click", calculate);
+			subtract.addEventListener("click", calculate);
+			multiply.addEventListener("click", calculate);
+			divide.addEventListener("click", calculate);
+            
+
+			function calculate() {
+				var n1 = parseFloat(num1.value);
+				var n2 = parseFloat(num2.value);
+				var operation = document.querySelector('input[name="operation"]:checked').value;
+				var res;
+
+				switch(operation) {
+					case "add":
+						res = n1 + n2;
+						break;
+					case "subtract":
+						res = n1 - n2;
+						break;
+					case "multiply":
+						res = n1 * n2;
+						break;
+					case "divide":
+						res = n1 / n2;
+						break;
+				}
+
+				result.innerHTML = res;
+			}
+		}
+	</script>
+</head>
+<body>
+	<label for="num1">Number 1:</label>
+	<input type="number" id="num1" name="num1"><br>
+
+	<label for="num2">Number 2:</label>
+	<input type="number" id="num2" name="num2"><br>
+
+	<label for="add">Add</label>
+	<input type="radio" id="add" name="operation" value="add">
+
+	<label for="subtract">Subtract</label>
+	<input type="radio" id="subtract" name="operation" value="subtract">
+
+	<label for="multiply">Multiply</label>
+	<input type="radio" id="multiply" name="operation" value="multiply">
+
+	<label for="divide">Divide</label>
+	<input type="radio" id="divide" name="operation" value="divide"><br>
+
+	<label for="result">Result:</label>
+	<span id="result"></span>
+</body>
+</html>

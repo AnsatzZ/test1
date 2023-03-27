@@ -8,7 +8,7 @@
 				border-collapse: collapse;
 			}
 
-			
+
 			th,
 			td {
 				border: 1px solid black;
@@ -124,6 +124,64 @@
     
 			</div>
 		</div>
+		//index.html
+
+
+
+
+
+	<script src="ToDoList.js"></script>
+
+
+
+<body>
+	<header class="bg-success text-white p-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<font face="Times New Roman"
+						size="11" color="black">
+						<strong>ToDo List</strong>
+					</font>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container mt-3">
+		<h2>Add Items</h2>
+
+		<label id="lblsuccess" class="text-success"
+				style="display: none;">
+		</label>
+		
+		<form id="addForm">
+			<div class="row">
+				<div class="col-lg-7 col-md-7 col-sm-7">
+
+					<input type="text" onkeyup=
+						"toggleButton(this, 'submit')"
+						class="form-control" id="item">
+				</div>
+
+				<div class="col-lg-5 col-md-5 col-sm-5">
+				<input type="submit" class="btn btn-dark"
+						id="submit" value="Submit" disabled>
+				</div>
+			</div>
+		</form>
+
+		<h3 class="mt-4">Tasks</h3>
+
+		<form id="addForm">
+			<ul class="list-group" id="items"></ul>
+		</form>
+	</div>
+</body>
+
+</html>
+
 
 		<script type="text/javascript" src="home.js"></script>
 	</body>
