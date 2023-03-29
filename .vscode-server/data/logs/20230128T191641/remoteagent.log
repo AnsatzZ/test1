@@ -1,0 +1,44 @@
+2023-01-28 19:16:42.129 [info] Extension host agent started.
+2023-01-28 19:16:42.300 [info] Started initializing default profile extensions in extensions installation folder. file:///home/Zining/.vscode-server/extensions
+2023-01-28 19:16:42.334 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/Zining/.vscode-server/extensions
+2023-01-28 19:16:42.405 [info] [127.0.0.1][7db56099][ManagementConnection] New connection established.
+2023-01-28 19:16:42.648 [info] [127.0.0.1][1840913e][ExtensionHostConnection] New connection established.
+2023-01-28 19:16:42.677 [info] [127.0.0.1][1840913e][ExtensionHostConnection] <24986> Launched Extension Host Process.
+2023-01-28 19:20:08.536 [info] [127.0.0.1][7db56099][ManagementConnection] The client has reconnected.
+2023-01-28 19:20:09.577 [error] CodeExpectedError: Could not find pty on pty host
+    at h.J (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:27:6395)
+    at h.updateIcon (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:27:2715)
+    at Object.call (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:17:5110)
+    at r.q (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:15:5390)
+    at r.p (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:15:4881)
+    at /home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:15:4286
+    at n.invoke (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:11:145)
+    at C.deliver (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:11:2038)
+    at v.fire (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:11:1676)
+    at process.O (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:9:20886)
+    at process.emit (node:events:526:28)
+    at emit (node:internal/child_process:938:14)
+    at processTicksAndRejections (node:internal/process/task_queues:84:21)
+2023-01-28 19:20:09.577 [error] CodeExpectedError: Could not find pty on pty host
+    at h.J (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:27:6395)
+    at h.updateTitle (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:27:2665)
+    at Object.call (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:17:5110)
+    at r.q (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:15:5390)
+    at r.p (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:15:4881)
+    at /home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:15:4286
+    at n.invoke (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:11:145)
+    at C.deliver (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:11:2038)
+    at v.fire (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:11:1676)
+    at process.O (/home/Zining/.vscode-server/bin/97dec172d3256f8ca4bfb2143f3f76b503ca0534/out/vs/platform/terminal/node/ptyHostMain.js:9:20886)
+    at process.emit (node:events:526:28)
+    at emit (node:internal/child_process:938:14)
+    at processTicksAndRejections (node:internal/process/task_queues:84:21)
+2023-01-28 19:20:40.179 [info] [127.0.0.1][1840913e][ExtensionHostConnection] The client has reconnected.
+2023-01-28 19:26:10.492 [info] [127.0.0.1][febe56db][ManagementConnection] New connection established.
+2023-01-28 19:26:10.738 [info] [127.0.0.1][b4aff9e7][ExtensionHostConnection] New connection established.
+2023-01-28 19:26:10.748 [info] [127.0.0.1][b4aff9e7][ExtensionHostConnection] <25380> Launched Extension Host Process.
+2023-01-28 19:31:10.794 [info] [127.0.0.1][1840913e][ExtensionHostConnection] <24986> Extension Host Process exited with code: 0, signal: null.
+2023-01-28 20:16:14.603 [info] [127.0.0.1][febe56db][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2023-01-28 20:16:14.621 [info] [127.0.0.1][b4aff9e7][ExtensionHostConnection] <25380> Extension Host Process exited with code: 0, signal: null.
+2023-01-28 20:16:14.621 [info] Last EH closed, waiting before shutting down
+2023-01-28 20:21:14.622 [info] Last EH closed, shutting down

@@ -1,0 +1,9 @@
+{
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "remote.SSH.remotePlatform": {
+        "3.21.35.251": "linux"
+    }
+}

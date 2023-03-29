@@ -1,0 +1,157 @@
+2023-01-31 10:15:05.594 [info] Log level: Info
+2023-01-31 10:15:05.594 [info] Validating found git in: "git"
+2023-01-31 10:15:05.594 [info] Using git "2.38.1" from "git"
+2023-01-31 10:15:05.594 [info] > git rev-parse --show-toplevel [156ms]
+2023-01-31 10:15:05.594 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-01-31 10:15:05.594 [info] > git rev-parse --show-toplevel [31ms]
+2023-01-31 10:15:05.594 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-01-31 10:15:05.594 [info] > git rev-parse --show-toplevel [17ms]
+2023-01-31 10:15:05.594 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-01-31 10:17:06.549 [info] > git rev-parse --show-toplevel [2ms]
+2023-01-31 10:17:06.553 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2023-01-31 10:17:06.569 [info] Open repository: /home/Zining/public_html/module2-individual-AnsatzZ
+2023-01-31 10:17:06.581 [info] > git config --get commit.template [6ms]
+2023-01-31 10:17:06.583 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2023-01-31 10:17:06.594 [info] > git status -z -uall [5ms]
+2023-01-31 10:17:06.595 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [4ms]
+2023-01-31 10:17:06.607 [info] > git config --get commit.template [4ms]
+2023-01-31 10:17:06.608 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-01-31 10:17:06.614 [info] > git status -z -uall [4ms]
+2023-01-31 10:17:06.616 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:17:08.643 [info] > git fetch [229ms]
+2023-01-31 10:17:08.643 [info] Missing or invalid credentials.
+Skip silent fetch commands
+Missing or invalid credentials.
+Skip silent fetch commands
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/cse330-spring-2023/module2-individual-AnsatzZ.git/'
+2023-01-31 10:17:27.121 [info] > git config --get commit.template [5ms]
+2023-01-31 10:17:27.123 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2023-01-31 10:17:27.129 [info] > git status -z -uall [3ms]
+2023-01-31 10:17:27.132 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:22:45.769 [info] > git rev-parse --show-toplevel [3ms]
+2023-01-31 10:22:45.772 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2023-01-31 10:22:45.780 [info] Open repository: /home/Zining/public_html/module2-group-module2_maru
+2023-01-31 10:22:45.790 [info] > git config --get commit.template [6ms]
+2023-01-31 10:22:45.791 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-01-31 10:22:45.801 [info] > git status -z -uall [4ms]
+2023-01-31 10:22:45.804 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:22:46.041 [info] > git fetch [260ms]
+2023-01-31 10:22:46.041 [info] Missing or invalid credentials.
+Skip silent fetch commands
+Missing or invalid credentials.
+Skip silent fetch commands
+remote: Repository not found.
+fatal: Authentication failed for 'https://github.com/cse330-spring-2023/module2-group-module2_maru.git/'
+2023-01-31 10:23:17.711 [info] > git check-ignore -v -z --stdin [5ms]
+2023-01-31 10:23:17.713 [info] > git check-ignore -v -z --stdin [4ms]
+2023-01-31 10:23:36.325 [info] > git check-ignore -v -z --stdin [2ms]
+2023-01-31 10:25:31.029 [info] > git rev-parse --show-toplevel [117ms]
+2023-01-31 10:25:31.029 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-01-31 10:25:35.595 [info] > git rev-parse --show-toplevel [22ms]
+2023-01-31 10:25:35.595 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-01-31 10:25:42.149 [info] > git show --textconv :calculator.php [5ms]
+2023-01-31 10:25:42.151 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/calculator.php [3ms]
+2023-01-31 10:25:42.308 [info] > git check-ignore -v -z --stdin [3ms]
+2023-01-31 10:25:42.812 [info] > git config --get commit.template [4ms]
+2023-01-31 10:25:42.813 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-01-31 10:25:42.820 [info] > git status -z -uall [4ms]
+2023-01-31 10:25:42.823 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [4ms]
+2023-01-31 10:25:45.485 [info] > git check-ignore -v -z --stdin [3ms]
+2023-01-31 10:25:47.843 [info] > git config --get commit.template [7ms]
+2023-01-31 10:25:47.845 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2023-01-31 10:25:47.851 [info] > git status -z -uall [4ms]
+2023-01-31 10:25:47.854 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [4ms]
+2023-01-31 10:25:48.270 [info] > git show --textconv :phpCala.html [5ms]
+2023-01-31 10:25:48.272 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/phpCala.html [3ms]
+2023-01-31 10:25:50.576 [info] > git rev-parse --show-toplevel [16ms]
+2023-01-31 10:25:50.576 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-01-31 10:25:50.584 [info] > git rev-parse --show-toplevel [3ms]
+2023-01-31 10:25:50.584 [info] fatal: not a git repository (or any of the parent directories): .git
+2023-01-31 10:25:54.468 [info] > git add -A -- /home/Zining/public_html/module2-individual-AnsatzZ/calculator.php [3ms]
+2023-01-31 10:25:54.476 [info] > git config --get commit.template [4ms]
+2023-01-31 10:25:54.477 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-01-31 10:25:54.484 [info] > git status -z -uall [4ms]
+2023-01-31 10:25:54.488 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [2ms]
+2023-01-31 10:25:55.569 [info] > git config --get commit.template [4ms]
+2023-01-31 10:25:55.570 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-01-31 10:25:55.577 [info] > git status -z -uall [3ms]
+2023-01-31 10:25:55.579 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:25:55.704 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/calculator.php [4ms]
+2023-01-31 10:25:55.708 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/phpCala.html [4ms]
+2023-01-31 10:25:55.711 [info] > git cat-file -s 0c4a4d95bf2a10ec0ca2bf4d0a97c6a86409adf4 [3ms]
+2023-01-31 10:25:55.760 [info] > git show --textconv :phpCala.html [4ms]
+2023-01-31 10:25:55.763 [info] > git show --textconv :calculator.php [4ms]
+2023-01-31 10:25:57.750 [info] > git add -A -- /home/Zining/public_html/module2-individual-AnsatzZ/phpCala.html [4ms]
+2023-01-31 10:25:57.758 [info] > git config --get commit.template [4ms]
+2023-01-31 10:25:57.760 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2023-01-31 10:25:57.766 [info] > git status -z -uall [4ms]
+2023-01-31 10:25:57.769 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:25:59.072 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/calculator.php [4ms]
+2023-01-31 10:25:59.076 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/phpCala.html [5ms]
+2023-01-31 10:25:59.080 [info] > git cat-file -s 0c4a4d95bf2a10ec0ca2bf4d0a97c6a86409adf4 [5ms]
+2023-01-31 10:25:59.082 [info] > git cat-file -s c2b1e15b95131038386ba0b130419c1848795102 [3ms]
+2023-01-31 10:25:59.173 [info] > git show --textconv :calculator.php [5ms]
+2023-01-31 10:25:59.176 [info] > git show --textconv :phpCala.html [3ms]
+2023-01-31 10:26:00.591 [info] > git config --get commit.template [4ms]
+2023-01-31 10:26:00.594 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2023-01-31 10:26:00.601 [info] > git status -z -uall [3ms]
+2023-01-31 10:26:00.603 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:26:03.042 [info] > git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file - [4ms]
+2023-01-31 10:26:03.042 [info] Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: no email was given and auto-detection is disabled
+2023-01-31 10:26:03.046 [info] > git config --get-all user.name [2ms]
+2023-01-31 10:26:05.521 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/calculator.php [4ms]
+2023-01-31 10:26:05.525 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/phpCala.html [5ms]
+2023-01-31 10:26:05.529 [info] > git cat-file -s 0c4a4d95bf2a10ec0ca2bf4d0a97c6a86409adf4 [5ms]
+2023-01-31 10:26:05.531 [info] > git cat-file -s c2b1e15b95131038386ba0b130419c1848795102 [3ms]
+2023-01-31 10:26:05.614 [info] > git config --get commit.template [4ms]
+2023-01-31 10:26:05.646 [info] > git show --textconv :calculator.php [5ms]
+2023-01-31 10:26:05.646 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [32ms]
+2023-01-31 10:26:05.654 [info] > git show --textconv :phpCala.html [9ms]
+2023-01-31 10:26:05.655 [info] > git status -z -uall [5ms]
+2023-01-31 10:26:05.658 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [4ms]
+2023-01-31 10:28:22.565 [info] > git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file - [6ms]
+2023-01-31 10:28:22.569 [info] > git config --get commit.template [2ms]
+2023-01-31 10:28:22.577 [info] > git config --get commit.template [4ms]
+2023-01-31 10:28:22.579 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-01-31 10:28:22.585 [info] > git status -z -uall [4ms]
+2023-01-31 10:28:22.587 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:28:22.830 [info] > git config --get commit.template [5ms]
+2023-01-31 10:28:22.832 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2023-01-31 10:28:22.838 [info] > git status -z -uall [4ms]
+2023-01-31 10:28:22.841 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [2ms]
+2023-01-31 10:28:23.868 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/calculator.php [4ms]
+2023-01-31 10:28:23.872 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/phpCala.html [7ms]
+2023-01-31 10:28:23.876 [info] > git cat-file -s 0c4a4d95bf2a10ec0ca2bf4d0a97c6a86409adf4 [5ms]
+2023-01-31 10:28:23.878 [info] > git cat-file -s c2b1e15b95131038386ba0b130419c1848795102 [3ms]
+2023-01-31 10:28:23.966 [info] > git show --textconv :calculator.php [5ms]
+2023-01-31 10:28:23.969 [info] > git show --textconv :phpCala.html [3ms]
+2023-01-31 10:28:24.409 [info] > git log --oneline --cherry master...master@{upstream} -- [3ms]
+2023-01-31 10:28:25.046 [info] > git pull --tags origin master [635ms]
+2023-01-31 10:28:25.046 [info] From https://github.com/cse330-spring-2023/module2-individual-AnsatzZ
+ * branch            master     -> FETCH_HEAD
+2023-01-31 10:28:26.024 [info] > git push origin master:master [975ms]
+2023-01-31 10:28:26.024 [info] To https://github.com/cse330-spring-2023/module2-individual-AnsatzZ.git
+   159b3be..53204da  master -> master
+2023-01-31 10:28:26.032 [info] > git config --get commit.template [3ms]
+2023-01-31 10:28:26.033 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2023-01-31 10:28:26.040 [info] > git status -z -uall [4ms]
+2023-01-31 10:28:26.042 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [3ms]
+2023-01-31 10:28:26.335 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/calculator.php [4ms]
+2023-01-31 10:28:26.338 [info] > git ls-files --stage -- /home/Zining/public_html/module2-individual-AnsatzZ/phpCala.html [4ms]
+2023-01-31 10:28:26.342 [info] > git cat-file -s 0c4a4d95bf2a10ec0ca2bf4d0a97c6a86409adf4 [4ms]
+2023-01-31 10:28:26.344 [info] > git cat-file -s c2b1e15b95131038386ba0b130419c1848795102 [3ms]
+2023-01-31 10:28:26.427 [info] > git show --textconv :calculator.php [5ms]
+2023-01-31 10:28:26.436 [info] > git show --textconv :phpCala.html [10ms]

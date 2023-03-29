@@ -1,0 +1,12 @@
+2023-01-30 12:48:52.066 [info] Extension host with pid 2620 started
+2023-01-30 12:48:52.081 [info] Lock '/home/Zining/.vscode-server/data/User/workspaceStorage/bfd2ef3786ee7cc56fa26048f6c30311/vscode.lock': Lock acquired.
+2023-01-30 12:48:52.176 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2023-01-30 12:48:52.243 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-01-30 12:48:52.330 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-01-30 12:48:52.331 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+2023-01-30 12:48:52.331 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-01-30 12:48:52.332 [info] Eager extensions activated
+2023-01-30 12:48:52.746 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2023-01-30 15:52:16.067 [info] Extension host terminating: renderer disconnected for too long (1)
+2023-01-30 15:52:16.068 [info] Lock '/home/Zining/.vscode-server/data/User/workspaceStorage/bfd2ef3786ee7cc56fa26048f6c30311/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2023-01-30 15:52:16.077 [info] Extension host with pid 2620 exiting with code 0

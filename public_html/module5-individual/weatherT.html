@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" type="text/css" href="weather.css" />
+    <style>
+      /* add your styles here */
+    </style>
+  </head>
+  <body>
+    <button id="weather-button">Update Weather</button>
+    <div class="weather" id="weatherWidget">
+      <div class="weather-loc"></div>
+      <div class="weather-humidity"></div>
+      <div class="weather-temp"></div>
+      <img class="weather-tomorrow" />
+      <img class="weather-dayaftertomorrow" />
+    </div>
+    <script>
+      function fetchWeather() {
+        const url = 'https://classes.engineering.wustl.edu/cse330/content/weather_json.php';
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              const response = JSON.parse(xhr.responseText);
+              const loc = response.location.city + ', ' + response.location.state;
+              const humidity = 'Humidity: ' + response.current.humidity + '%';
+              const temp = 'Temperature: ' + response.current.temperature + '°F';
+              const tomorrowImg = 'https://classes.engineering.wustl.edu/cse330/content/weather_images/' + response.forecast.tomorrow.code + '.png';
+              const dayafterImg = 'https://classes.engineering.wustl.edu/cse330/content/weather_images/' + response.forecast.dayafter.code + '.png';
+              document.getElementsByClassName("weather-loc")[0].innerHTML=stronkLoc;
+            document.getElementsByClassName("weather-humidity")[0].textContent=data.atmosphere.humidity;
+            document.getElementsByClassName("weather-temp")[0].textContent=data.current.temp;
+            
+            var tomorrowURL = "http://us.yimg.com/i/us/nws/weather/gr/"+data.tomorrow.code+"ds.png";
+            var dayAfterURL = "http://us.yimg.com/i/us/nws/weather/gr/"+data.dayafter.code+"ds.png";
+            document.getElementsByClassName("weather-tomorrow")[0].src=tomorrowURL;
+            document.getElementsByClassName("weather-dayaftertomorrow")[0].src=dayAfterURL;
+            } else {
+              console.error('Error fetching weather data. Status:', xhr.status);
+            }
+          }
+        };
+        xhr.open('GET', url);
+        xhr.send();
+      }
+      document.addEventListener('DOMContentLoaded', fetchWeather, false);
+      document.querySelector('#weather-button').addEventListener('click', fetchWeather);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@8.19.3
+2 info using node@v16.19.1
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:/usr/lib/node_modules/npm/npmrc Completed in 17ms
+6 timing config:load:builtin Completed in 18ms
+7 timing config:load:cli Completed in 7ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:project Completed in 2ms
+10 timing config:load:file:/home/Zining/.npmrc Completed in 0ms
+11 timing config:load:user Completed in 0ms
+12 timing config:load:file:/usr/etc/npmrc Completed in 0ms
+13 timing config:load:global Completed in 0ms
+14 timing config:load:validate Completed in 0ms
+15 timing config:load:credentials Completed in 1ms
+16 timing config:load:setEnvs Completed in 1ms
+17 timing config:load Completed in 32ms
+18 timing npm:load:configload Completed in 32ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm install mime
+22 verbose argv "install" "mime" "--save"
+23 timing npm:load:setTitle Completed in 2ms
+24 timing config:load:flatten Completed in 4ms
+25 timing npm:load:display Completed in 6ms
+26 verbose logfile logs-max:10 dir:/home/Zining/.npm/_logs
+27 verbose logfile /home/Zining/.npm/_logs/2023-03-27T17_15_25_401Z-debug-0.log
+28 timing npm:load:logFile Completed in 7ms
+29 timing npm:load:timers Completed in 0ms
+30 timing npm:load:configScope Completed in 0ms
+31 timing npm:load Completed in 49ms
+32 timing arborist:ctor Completed in 1ms
+33 silly logfile done cleaning log files
+34 timing arborist:ctor Completed in 1ms
+35 timing idealTree:init Completed in 14ms
+36 timing idealTree:userRequests Completed in 2ms
+37 silly idealTree buildDeps
+38 silly fetch manifest mime@*
+39 http fetch GET 200 https://registry.npmjs.org/mime 109ms (cache miss)
+40 silly placeDep ROOT mime@3.0.0 OK for:  want: *
+41 timing idealTree:#root Completed in 124ms
+42 timing idealTree:node_modules/mime Completed in 0ms
+43 timing idealTree:buildDeps Completed in 126ms
+44 timing idealTree:fixDepFlags Completed in 1ms
+45 timing idealTree Completed in 146ms
+46 timing reify:loadTrees Completed in 146ms
+47 timing reify:diffTrees Completed in 2ms
+48 silly reify moves {}
+49 timing reify:retireShallow Completed in 2ms
+50 timing reify:createSparse Completed in 16ms
+51 timing reify:loadBundles Completed in 0ms
+52 silly audit bulk request { mime: [ '3.0.0' ] }
+53 silly tarball no local data for mime@https://registry.npmjs.org/mime/-/mime-3.0.0.tgz. Extracting by manifest.
+54 http fetch GET 200 https://registry.npmjs.org/npm 252ms (cache miss)
+55 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 113ms
+56 timing auditReport:getReport Completed in 115ms
+57 silly audit report {}
+58 timing auditReport:init Completed in 0ms
+59 timing reify:audit Completed in 116ms
+60 http fetch GET 200 https://registry.npmjs.org/mime/-/mime-3.0.0.tgz 104ms (cache miss)
+61 timing reifyNode:node_modules/mime Completed in 114ms
+62 timing reify:unpack Completed in 115ms
+63 timing reify:unretire Completed in 0ms
+64 timing build:queue Completed in 0ms
+65 timing build:link:node_modules/mime Completed in 2ms
+66 timing build:link Completed in 2ms
+67 timing build:deps Completed in 3ms
+68 timing build Completed in 4ms
+69 timing reify:build Completed in 5ms
+70 timing reify:trash Completed in 0ms
+71 timing reify:save Completed in 12ms
+72 timing reify Completed in 351ms
+73 silly ADD node_modules/mime
+74 timing command:install Completed in 358ms
+75 notice
+75 notice New [31mmajor[39m version of npm available! [31m8.19.3[39m -> [32m9.6.2[39m
+75 notice Changelog: [36mhttps://github.com/npm/cli/releases/tag/v9.6.2[39m
+75 notice Run [32mnpm install -g npm@9.6.2[39m to update!
+75 notice
+76 verbose exit 0
+77 timing npm Completed in 503ms
+78 info ok
